@@ -239,7 +239,7 @@ export class CameraAccessory {
     this.setupInfoAccessory(this.cameraInfo);
 
     if (!this.config.disableStreaming) {
-      this.setupCameraStreaming(this.cameraInfo);
+      await this.setupCameraStreaming(this.cameraInfo);
     }
 
     if (!this.config.disablePrivacyAccessory) {
@@ -251,7 +251,7 @@ export class CameraAccessory {
     }
 
     if (!this.config.disableMotionAccessory) {
-      this.setupMotionDetectionAccessory();
+      await this.setupMotionDetectionAccessory();
     }
 
     // Only setup the polling if needed
